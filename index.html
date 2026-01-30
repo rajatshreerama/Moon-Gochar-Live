@@ -55,7 +55,7 @@
                 let rNum = (lSign + i - 2) % 12 + 1;
                 html += `<text x="${rPos[i][0]}" y="${rPos[i][1]}" class="r-num">${rNum}</text>`;
                 if(i === 1) html += `<text x="200" y="85" class="l-val">लग्न: ${toDMS(lDeg)}</text>`;
-                if(i === mHouse) html += `<text x="${rPos[i][0]}" y="${rPos[i][1]+30}" class="m-val">-चं ${toDMS(currentMTotal%30)}</text>`;
+                if(i === mHouse) html += `<text x="${rPos[i][0]}" y="${rPos[i][1]+30}" class="m-val">चं ${toDMS(currentMTotal%30)}</text>`;
             }
             document.getElementById('live-layer').innerHTML = html;
         }
