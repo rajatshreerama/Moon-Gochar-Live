@@ -1,96 +1,66 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="hi">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Live Precision Kundli</title>
+    <style>
+        :root { --header: #e65100; --text: #bf360c; }
+        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; background: #f4f4f4; margin: 0; overflow: hidden; }
+        .app-bar { width: 100%; background: var(--header); color: white; padding: 15px; text-align: center; font-size: 22px; font-weight: bold; }
+        #chart-container { width: 95vw; height: 95vw; max-width: 420px; max-height: 420px; background: white; border: 2px solid #000; margin-top: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        svg { width: 100%; height: 100%; }
+        .r-num { font-size: 20px; font-weight: bold; fill: #d32f2f; text-anchor: middle; }
+        .l-val { font-size: 14px; font-weight: bold; fill: #000; text-anchor: middle; }
+        .m-val { font-size: 15px; font-weight: bold; fill: #9c27b0; text-anchor: middle; }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="hi"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Live Precision Kundli&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>:root { --header: #e65100; --text: #bf360c; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; background: #f4f4f4; margin: 0; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.app-bar { width: 100%; background: var(--header); color: white; padding: 15px; text-align: center; font-size: 22px; font-weight: bold; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>#chart-container { width: 420px; height: 420px; background: white; border: 2px solid #000; margin-top: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>svg { width: 100%; height: 100%; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.r-num { font-size: 20px; font-weight: bold; fill: #d32f2f; text-anchor: middle; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.l-val { font-size: 14px; font-weight: bold; fill: #000; text-anchor: middle; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.m-val { font-size: 15px; font-weight: bold; fill: #9c27b0; text-anchor: middle; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="app-bar"&gt;दिव्य कुंडली - दिल्ली लाइव सिंक&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="chart-container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;svg viewBox="0 0 400 400"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;rect x="0" y="0" width="400" height="400" fill="none" stroke="#000" stroke-width="2"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;line x1="0" y1="0" x2="400" y2="400" stroke="#000"/&gt;&lt;line x1="400" y1="0" x2="0" y2="400" stroke="#000"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;line x1="200" y1="0" x2="400" y2="200" stroke="#000"/&gt;&lt;line x1="400" y1="200" x2="200" y2="400" stroke="#000"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;line x1="200" y1="400" x2="0" y2="200" stroke="#000"/&gt;&lt;line x1="0" y1="200" x2="200" y2="0" stroke="#000"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;g id="live-layer"&gt;&lt;/g&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>// --- आपका बेस डेटा (30 Jan 2026, 11:14 AM IST के आसपास का) ---</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const startTime = new Date("2026-01-30T11:14:00").getTime();</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const startLagna = 7.3361; // मेष 07:20:10 (Decimal)</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const startMoon = 70.1586; // मिथुन 10:09:31 (60 + 10.1586)</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>function toDMS(deg) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>let d = Math.floor(deg % 30);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>let m = Math.floor((deg % 1) * 60);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>let s = Math.floor(((deg % 1 * 60) % 1) * 60);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>return `${d}:${m &lt; 10 ? '0'+m : m}:${s &lt; 10 ? '0'+s : s}`;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>const rPos = { 1:[200,140], 2:[100,70], 3:[70,100], 4:[140,200], 5:[70,300], 6:[100,330], 7:[200,265], 8:[300,330], 9:[330,300], 10:[260,200], 11:[330,100], 12:[300,70] };</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>function update() {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const now = new Date();</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const diff = (now.getTime() - startTime) / 1000;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>// लग्न गति: 1 सेकंड में 0.004166 डिग्री</p>
-<p class="p1"><span class="Apple-converted-space">            </span>let currentLTotal = startLagna + (diff * 0.004166);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>let lSign = (Math.floor(currentLTotal / 30) % 12) + 1;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>let lDeg = currentLTotal % 30;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>// चंद्रमा गति: 13.18 डिग्री प्रति दिन</p>
-<p class="p1"><span class="Apple-converted-space">            </span>let currentMTotal = startMoon + (13.18 / 86400 * diff);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>let mSign = (Math.floor(currentMTotal / 30) % 12) + 1;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>let mHouse = (mSign - lSign + 1); if(mHouse &lt;= 0) mHouse += 12;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>let html = "";</p>
-<p class="p1"><span class="Apple-converted-space">            </span>for(let i=1; i&lt;=12; i++) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>let rNum = (lSign + i - 2) % 12 + 1;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>html += `&lt;text x="${rPos[i][0]}" y="${rPos[i][1]}" class="r-num"&gt;${rNum}&lt;/text&gt;`;</p>
-<p class="p2"><span class="Apple-converted-space">                </span></p>
-<p class="p1"><span class="Apple-converted-space">                </span>if(i === 1) {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>html += `&lt;text x="200" y="85" class="l-val"&gt;लग्न: ${toDMS(lDeg)}&lt;/text&gt;`;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>}</p>
-<p class="p1"><span class="Apple-converted-space">                </span>if(i === mHouse) {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>html += `&lt;text x="${rPos[i][0]}" y="${rPos[i][1]+30}" class="m-val"&gt;-चं ${toDMS(currentMTotal%30)}&lt;/text&gt;`;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('live-layer').innerHTML = html;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// हर 1 सेकंड में रिफ्रेश</p>
-<p class="p1"><span class="Apple-converted-space">        </span>setInterval(update, 1000);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>update();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+    <div class="app-bar">दिव्य कुंडली - दिल्ली लाइव सिंक</div>
+    <div id="chart-container">
+        <svg viewBox="0 0 400 400">
+            <rect x="0" y="0" width="400" height="400" fill="none" stroke="#000" stroke-width="2"/>
+            <line x1="0" y1="0" x2="400" y2="400" stroke="#000"/><line x1="400" y1="0" x2="0" y2="400" stroke="#000"/>
+            <line x1="200" y1="0" x2="400" y2="200" stroke="#000"/><line x1="400" y1="200" x2="200" y2="400" stroke="#000"/>
+            <line x1="200" y1="400" x2="0" y2="200" stroke="#000"/><line x1="0" y1="200" x2="200" y2="0" stroke="#000"/>
+            <g id="live-layer"></g>
+        </svg>
+    </div>
+    <script>
+        const startTime = new Date("2026-01-30T11:14:00").getTime();
+        const startLagna = 7.3361; 
+        const startMoon = 70.1586; 
+
+        function toDMS(deg) {
+            let d = Math.floor(deg % 30);
+            let m = Math.floor((deg % 1) * 60);
+            let s = Math.floor(((deg % 1 * 60) % 1) * 60);
+            return `${d}:${m < 10 ? '0'+m : m}:${s < 10 ? '0'+s : s}`;
+        }
+
+        const rPos = { 1:[200,140], 2:[100,70], 3:[70,100], 4:[140,200], 5:[70,300], 6:[100,330], 7:[200,265], 8:[300,330], 9:[330,300], 10:[260,200], 11:[330,100], 12:[300,70] };
+
+        function update() {
+            const now = new Date();
+            const diff = (now.getTime() - startTime) / 1000;
+            let currentLTotal = startLagna + (diff * 0.004166);
+            let lSign = (Math.floor(currentLTotal / 30) % 12) + 1;
+            let lDeg = currentLTotal % 30;
+            let currentMTotal = startMoon + (13.18 / 86400 * diff);
+            let mSign = (Math.floor(currentMTotal / 30) % 12) + 1;
+            let mHouse = (mSign - lSign + 1); if(mHouse <= 0) mHouse += 12;
+
+            let html = "";
+            for(let i=1; i<=12; i++) {
+                let rNum = (lSign + i - 2) % 12 + 1;
+                html += `<text x="${rPos[i][0]}" y="${rPos[i][1]}" class="r-num">${rNum}</text>`;
+                if(i === 1) html += `<text x="200" y="85" class="l-val">लग्न: ${toDMS(lDeg)}</text>`;
+                if(i === mHouse) html += `<text x="${rPos[i][0]}" y="${rPos[i][1]+30}" class="m-val">-चं ${toDMS(currentMTotal%30)}</text>`;
+            }
+            document.getElementById('live-layer').innerHTML = html;
+        }
+        setInterval(update, 1000);
+        update();
+    </script>
 </body>
 </html>
