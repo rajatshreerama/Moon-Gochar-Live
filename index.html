@@ -27,9 +27,11 @@
         </svg>
     </div>
     <script>
-        const startTime = new Date("2026-01-30T11:14:00").getTime();
-        const startLagna = 7.3361; 
-        const startMoon = 70.1586; 
+        const startTime = new Date("2026-01-30T07:16:00").getTime();
+        const startLagna = 286.3972; 
+        
+        // Moon को 2 मिनट आगे बढ़ा दिया गया है
+        const startMoon = 68.7142;   
 
         function toDMS(deg) {
             let d = Math.floor(deg % 30);
@@ -43,9 +45,11 @@
         function update() {
             const now = new Date();
             const diff = (now.getTime() - startTime) / 1000;
+
             let currentLTotal = startLagna + (diff * 0.004166);
             let lSign = (Math.floor(currentLTotal / 30) % 12) + 1;
             let lDeg = currentLTotal % 30;
+
             let currentMTotal = startMoon + (13.18 / 86400 * diff);
             let mSign = (Math.floor(currentMTotal / 30) % 12) + 1;
             let mHouse = (mSign - lSign + 1); if(mHouse <= 0) mHouse += 12;
